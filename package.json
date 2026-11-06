@@ -1,0 +1,17 @@
+{
+  "name": "log-batch-size-calculator",
+  "version": "0.1.0",
+  "description": "Measures UTF-8 byte size of log entries for byte-budget batching.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "BSD-3-Clause",
+  "dependencies": {}
+}
