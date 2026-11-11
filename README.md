@@ -34,3 +34,10 @@ An entry larger than the whole budget cannot be made to fit. `batchSize` reports
 - `byteLength(entry)` — byte length of one entry serialized as `key=value` pairs.
 - `batchSize(entries, maxBytes)` — count of leading entries that fit, or `-1` if none fit.
 - `batchEntries(entries, maxBytes)` — array of batches, each within the budget.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
